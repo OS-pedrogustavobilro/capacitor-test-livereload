@@ -1,0 +1,7 @@
+{
+  "name": "capacitor-test-livereload",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
