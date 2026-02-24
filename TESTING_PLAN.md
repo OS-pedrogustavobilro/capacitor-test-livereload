@@ -69,10 +69,14 @@ ngrok http 5173
 
 **Expected output:**
 ```
-Forwarding  https://abcd-1234-5678.ngrok-free.app -> http://localhost:5173
+Forwarding  https://abcd-1234-5678.ngrok-free.dev -> http://localhost:5173
 ```
 
-**Important:** Copy the `https://` URL (e.g., `https://abcd-1234-5678.ngrok-free.app`)
+**Important:** Copy the `https://` URL (e.g., `https://abcd-1234-5678.ngrok-free.dev`)
+
+### Step 2A: Allow ngrok hosts
+
+May require setting allowing the ngrok host in [server.allowedhosts](https://vite.dev/config/server-options#server-allowedhosts) on vite config.
 
 ### Step 3A: Test on Android
 
@@ -80,12 +84,12 @@ In a new terminal:
 
 ```bash
 # Run with live reload using ngrok URL and --https flag
-npx cap run android -l --host=abcd-1234-5678.ngrok-free.app --https --port=443
+npx cap run android -l --host=abcd-1234-5678.ngrok-free.dev --https --port=443
 ```
 
 **Expected behavior:**
 - App builds and deploys to Android device/emulator
-- Console shows: `[info] App running with live reload listing for: https://abcd-1234-5678.ngrok-free.app:443`
+- Console shows: `[info] App running with live reload listing for: https://abcd-1234-5678.ngrok-free.dev:443`
 - App loads your web content
 - WebView connects via HTTPS
 
@@ -100,12 +104,12 @@ In a new terminal:
 
 ```bash
 # Run with live reload using ngrok URL and --https flag
-npx cap run ios -l --host=abcd-1234-5678.ngrok-free.app --https --port=443
+npx cap run ios -l --host=abcd-1234-5678.ngrok-free.dev --https --port=443
 ```
 
 **Expected behavior:**
 - App builds and launches in iOS simulator
-- Console shows: `[info] App running with live reload listing for: https://abcd-1234-5678.ngrok-free.app:443`
+- Console shows: `[info] App running with live reload listing for: https://abcd-1234-5678.ngrok-free.dev:443`
 - App loads your web content via HTTPS
 - WebView connects securely
 
